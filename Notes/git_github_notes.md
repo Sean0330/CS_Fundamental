@@ -1750,3 +1750,9 @@ C0 -> C1 -> C2 ---------> M1
 这张图基本就把 branch 和指针关系讲完了。
 
 ## 五. git在VScode上的操作
+
+
+
+的说法
+
+unmerged paths、both mo
