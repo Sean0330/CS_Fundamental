@@ -1336,12 +1336,8 @@ git add .
 git commit -m "finish algorithm A"
 ```
 
-这两次提交就对应图里的：
+这两次提交就对应图里的： C1; C2
 
-```text
-C1
-C2
-```
 
 也就是说，算法 A 的开发历史都留在 `feature-a` 这条线上。
 
