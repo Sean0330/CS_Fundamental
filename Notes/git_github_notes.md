@@ -1572,8 +1572,7 @@ C0 -> C1 -> C2      feature-a
             /↑
           C5 main
           ↑
-      feature-b
-                
+      feature-b       
 ```
 
 这里：
@@ -1673,7 +1672,6 @@ C0 -> C1 -> C2 ---------> M1
 ```bash
 git push origin feature-a
 ```
-
 ---
 
 #### 6. 一个完整操作流程
