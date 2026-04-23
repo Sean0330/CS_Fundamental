@@ -1112,7 +1112,7 @@ compare: feature-a
 #### 4.7.1 clone repo
 
 如果 GitHub 上已经有仓库，而你本地还没有，  
-正确做法就是：
+正确做法就是： 
 
 ```bash
 git clone git@github.com:Sean0330/practice_pytorch.git
