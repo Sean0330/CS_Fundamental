@@ -2053,3 +2053,48 @@ VS Code 会打开对比界面，让你看哪里变了。
 ![git status](https://raw.githubusercontent.com/Sean0330/CS_Fundamental/main/images/git_merge_vscode.png)
 
 ---
+## 5.3 
+```
+你在 dev 分支改代码
+        ↓
+本地 add、commit
+        ↓
+push 到 GitHub 的 dev 分支
+        ↓
+在 GitHub 网页点击 “Compare & pull request”
+        ↓
+进入 PR 页面
+        ↓
+选择：
+base = 目标分支
+compare = 来源分支
+        ↓
+GitHub 自动做这些事：
+1. 比较两个分支的差异
+2. 展示改了哪些文件
+3. 展示增加了哪些 commit
+4. 检查能不能合并
+5. 检查有没有冲突
+        ↓
+你填写：
+标题
+说明
+        ↓
+点击 “Create pull request”
+        ↓
+PR 被创建出来
+        ↓
+后续可以做这些事：
+1. 自己检查改动
+2. 别人 review
+3. 讨论
+4. 继续往 compare 分支 push 新提交
+   这些新提交会自动进入这个 PR
+        ↓
+如果没问题
+点击 “Merge pull request”
+        ↓
+GitHub 把 compare 分支的内容合并到 base 分支
+        ↓
+PR 完成
+```
