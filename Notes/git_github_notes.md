@@ -297,25 +297,21 @@ git branch
 作用：  
 查看本地分支。
 
-创建分支：
+创建分支, 但不会自动切换过去：
 
 ```bash
 git branch a
 ```
 
-作用：  
-创建一个新分支 `a`，但不会自动切换过去。
-
-如果输出：
+删除分支：
 
 ```bash
-  a
-* master
+git branch -D a
 ```
-
-意思：  
-`a` 已经创建成功，但你现在还在 `master`。
-
+删除远端分支：
+```bash
+git push origin --delete a
+```
 ---
 
 ### `git switch`
@@ -343,8 +339,6 @@ Switched to a new branch 'feature-demo'
 新分支创建成功，并且已经切换过去了。
 
 ---
-
-### `git merge`
 
 ### `git merge`
 
@@ -2053,6 +2047,5 @@ VS Code 会打开对比界面，让你看哪里变了。
 
 **先切到目标分支，再做 merge。**
 
----
 
 ---
