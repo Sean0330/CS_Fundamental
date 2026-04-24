@@ -1,6 +1,6 @@
 # Git 和 GitHub 学习笔记
 
-## 一. 核心概念12345
+## 一. 核心概念
 
 ### Repository
 Repository 就是仓库，也就是一个项目的存放位置。
