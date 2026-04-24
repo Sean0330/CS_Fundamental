@@ -2041,11 +2041,15 @@ VS Code 会打开对比界面，让你看哪里变了。
 
 #### 10. 想合并分支
 先切到你想接收内容的那个分支。  
-然后在右上角 `...` 里找 Merge 相关操作，再选来源分支。
+然后在源代码管理--更改的右上角 `...` 里找 branch--Merge（中文是分支--合并） 相关操作，再选来源分支。
 
-你现在先记住这一句就够了：
+在 VS Code 里出现冲突时，不要先记按钮名字，先记这个对应关系：
+```
+当前更改 Current Change = 你现在所在分支的内容
+传入更改 Incoming Change = 被 merge 进来的分支内容
+```
+如图，当有冲突是，合并编辑器会给你返回如下，可以选择接受incoming；接受current；接受组合；或者在下方自行输入你想要的方式，四个选项
 
-**先切到目标分支，再做 merge。**
-
+![git status](https://raw.githubusercontent.com/Sean0330/CS_Fundamental/main/images/git_merge_vscode.png)
 
 ---
