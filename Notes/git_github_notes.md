@@ -449,7 +449,11 @@ max_iter = 100
 冲突文件中可能显示：
 
 ```python
+<<<<<<< HEAD
 method = "algorithm_B"
+=======
+method = "algorithm_A"
+>>>>>>> feature-a
 max_iter = 100
 ```
 
@@ -2050,6 +2054,9 @@ VS Code 会打开对比界面，让你看哪里变了。
 
 ---
 ## 5.2 Pull Request: GitHub 上的合并申请和审核流程
+### 与git merge的关系：
+git merge 是直接执行合并的命令，Pull Request 是在 GitHub 上发起、检查、讨论并最终完成合并的流程。
+### 具体实施流程
 ```
 你在 dev 分支改代码
         ↓
@@ -2062,8 +2069,8 @@ push 到 GitHub 的 dev 分支
 进入 PR 页面
         ↓
 选择：
-base = 目标分支
-compare = 来源分支
+base = 目标分支： 你想把代码并到哪条分支
+compare = 来源分支： 你的改动现在在哪条分支
         ↓
 GitHub 自动做这些事：
 1. 比较两个分支的差异
@@ -2087,10 +2094,18 @@ PR 被创建出来
 4. 继续往 compare 分支 push 新提交
    这些新提交会自动进入这个 PR
         ↓
-如果没问题
+1. 如果出现冲突，会在页面上出现resolve conflicts的提示（Fig 3）
+2. 点击记录按照merge的一样的方法进行调整（Fig4）；
+3. 点击mark as resolved完成。
+        ↓
 点击 “Merge pull request”
         ↓
 GitHub 把 compare 分支的内容合并到 base 分支
         ↓
 PR 完成
 ```
+
+**Fig 3**
+![git status](https://raw.githubusercontent.com/Sean0330/CS_Fundamental/main/images/github_PR.png)
+**Fig 4**
+![git status](https://raw.githubusercontent.com/Sean0330/CS_Fundamental/main/images/github_PR_change.png)
