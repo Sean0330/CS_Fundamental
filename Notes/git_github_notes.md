@@ -2053,3 +2053,4 @@ VS Code 会打开对比界面，让你看哪里变了。
 ![git status](https://raw.githubusercontent.com/Sean0330/CS_Fundamental/main/images/git_merge_vscode.png)
 
 ---
+## 5.2 Pull Request: GitHub 上的合并申请和审核流程
