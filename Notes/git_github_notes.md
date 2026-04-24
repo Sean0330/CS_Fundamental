@@ -1951,6 +1951,10 @@ C0 -> C1 -> C2 ---------> M1
 
 这个位置非常重要，因为你很多操作都和“当前在哪个分支”有关。
 
+**Fig 2**
+：各个内容在vscode中的位置
+
+![git status](https://raw.githubusercontent.com/Sean0330/CS_Fundamental/main/images/git_vscode.png)
 ---
 
 ### 5.2 在 VS Code 里怎么操作
@@ -2094,8 +2098,8 @@ PR 被创建出来
 4. 继续往 compare 分支 push 新提交
    这些新提交会自动进入这个 PR
         ↓
-1. 如果出现冲突，会在页面上出现resolve conflicts的提示（Fig 3）
-2. 点击记录按照merge的一样的方法进行调整（Fig4）；
+1. 如果出现冲突，会在页面上出现resolve conflicts的提示（Fig 4）
+2. 点击记录按照merge的一样的方法进行调整（Fig 5）；
 3. 点击mark as resolved完成。
         ↓
 点击 “Merge pull request”
@@ -2105,7 +2109,7 @@ GitHub 把 compare 分支的内容合并到 base 分支
 PR 完成
 ```
 
-**Fig 3**
-![git status](https://raw.githubusercontent.com/Sean0330/CS_Fundamental/main/images/github_PR.png)
 **Fig 4**
+![git status](https://raw.githubusercontent.com/Sean0330/CS_Fundamental/main/images/github_PR.png)
+**Fig 5**
 ![git status](https://raw.githubusercontent.com/Sean0330/CS_Fundamental/main/images/github_PR_change.png)
