@@ -1,5 +1,52 @@
 # Git 和 GitHub 学习笔记
+**目录**
 
+## 一. 核心概念
+### 1.1 Repository
+### 1.2 commit
+### 1.3 branch
+### 1.4 Fork
+### 1.5 Pull Request
+### 1.6 Merge
+### 1.7 Watch
+
+## 二. 常用命令与关键返回
+### 2.1 `git init`
+### 2.2 `git status`
+### 2.3 `git add`
+### 2.4 `git commit`
+### 2.5 `git log`
+### 2.6 `cat`
+### 2.7 `git branch`
+### 2.8 `git switch`
+### 2.9 `git merge`
+### 2.10 `git restore`
+### 2.11 `git clean`
+### 2.12 备注 1 ：`git add` 之后又修改文件怎么办
+### 2.13 备注 2 ：`to be committed` 和 `not staged for commit`
+### 2.14 备注 3 ：reset 和 restore
+### 2.15 全流程总结
+
+## 三. 本机与服务器连接 GitHub
+### 3.1 Windows 连接 GitHub
+### 3.2 Linux 服务器连接 GitHub
+
+## 四. 通过 Git 将代码同步到 GitHub
+### 4.1 `git clone`
+### 4.2 `git pull`
+### 4.3 `git push`
+### 4.4 `git remote`
+### 4.5 `git tag`
+### 4.6 GitHub 上的 merge 是怎么发生的
+### 4.7 场景一：本地还没有这个项目
+### 4.8 场景二：本地存在内容项目
+### 4.9 场景三：Git 分支、merge、tag 场景整理
+### 4.10 Git 中 branch、commit、指针、merge、push 的简明说明
+
+## 五. Git在VS Code上的操作
+### 5.1 VS Code 里需要单独认识的内容
+### 5.2 在 VS Code 里怎么操作
+### 5.3 Pull Request: GitHub 上的合并申请和审核流程
 ## 一. 核心概念
 
 ### Repository
@@ -2057,7 +2104,7 @@ VS Code 会打开对比界面，让你看哪里变了。
 ![git status](https://raw.githubusercontent.com/Sean0330/CS_Fundamental/main/images/git_merge_vscode.png)
 
 ---
-## 5.2 Pull Request: GitHub 上的合并申请和审核流程
+## 5.3 Pull Request: GitHub 上的合并申请和审核流程
 ### 与git merge的关系：
 git merge 是直接执行合并的命令，Pull Request 是在 GitHub 上发起、检查、讨论并最终完成合并的流程。
 ### 具体实施流程
