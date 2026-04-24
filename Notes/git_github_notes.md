@@ -346,52 +346,199 @@ Switched to a new branch 'feature-demo'
 
 ### `git merge`
 
-```bash
-git merge feature-demo
-```
+### `git merge`
 
-作用：  
-把指定分支合并到**当前分支**。
 
-最重要的一点：
+#### 1. merge作用：把 feature-a 的改动并入 main：
 
 ```bash
-git switch 目标分支
-git merge 来源分支
+git switch main
+git merge feature-a
+```
+这里：
+```text
+当前分支 main = 接收方
+feature-a = 被合并进来的分支
+```
+---
+
+#### 2. merge 的核心逻辑
+
+Git merge 不是简单比较 `main` 和 `feature-a`。
+
+它会同时看三者：
+
+```text
+共同祖先 C0
+当前分支 main
+要合并的分支 feature-a
 ```
 
-例如：
+核心逻辑是：
+
+```text
+以共同祖先 C0 为参照：
+看 main 从 C0 开始改了什么
+看 feature-a 从 C0 开始改了什么
+然后尝试把两边改动合起来
+```
+
+---
+
+#### 3. 不冲突的情况
+
+共同祖先 `C0`：
+
+```python
+x = 1
+y = 10
+```
+
+`main` 改了 `y`：
+
+```python
+x = 1
+y = 20
+```
+
+`feature-a` 改了 `x`：
+
+```python
+x = 100
+y = 10
+```
+
+Git 会判断：
+
+```text
+main 改了 y
+feature-a 改了 x
+两边改的地方不同
+```
+
+所以可以自动合并成：
+
+```python
+x = 100
+y = 20
+```
+
+---
+
+#### 4. 冲突的情况
+
+共同祖先 `C0`：
+
+```python
+method = "baseline"
+max_iter = 100
+```
+
+`main` 改成：
+
+```python
+method = "algorithm_B"
+max_iter = 100
+```
+
+`feature-a` 改成：
+
+```python
+method = "algorithm_A"
+max_iter = 100
+```
+
+两边都改了同一个位置，而且改法不同。
+
+这时 Git 不知道该保留谁，就会产生冲突。
+
+冲突文件中可能显示：
+
+```python
+<<<<<<< HEAD
+method = "algorithm_B"
+=======
+method = "algorithm_A"
+>>>>>>> feature-a
+max_iter = 100
+```
+
+这里：
+
+```text
+HEAD 部分 = 当前分支 main 的内容
+feature-a 部分 = 被合并进来的分支内容
+```
+
+---
+
+#### 5. 冲突时应该怎么处理
+
+冲突时，不是固定保留 `main`，也不是固定保留 `feature-a`。
+
+你需要人工决定最终结果。
+
+可以选择保留 main：
+
+```python
+method = "algorithm_B"
+max_iter = 100
+```
+
+也可以选择保留 feature-a：
+
+```python
+method = "algorithm_A"
+max_iter = 100
+```
+
+也可以自己融合成新版本：
+
+```python
+method = "algorithm_A_with_B_setting"
+max_iter = 100
+```
+
+然后执行：
 
 ```bash
-git switch master
-git merge feature-demo
+git add model.py
+git commit
 ```
 
-意思：
+这个提交就是最终的 merge commit。
 
-**把 `feature-demo` 合并到 `master`。**
+---
 
-关键返回 1：
+#### 6. 最核心图
+
+```text
+          A1 -- A2   feature-a
+         /
+C0
+         \
+          M1 -- M2   main
+```
+
+执行：
 
 ```bash
-Updating d95394e..5bc219b
-Fast-forward
- demo.txt | 2 ++
- 1 file changed, 2 insertions(+)
+git switch main
+git merge feature-a
 ```
 
-意思：  
-合并成功了，当前分支已经拿到了 `feature-demo` 的改动。
+意思是：
 
-关键返回 2：
-
-```bash
-Already up to date.
+```text
+把 feature-a 从 C0 以来的改动，合并进 main 当前状态，得到
 ```
-
-意思：  
-当前分支本来就已经包含对方内容，不需要再 merge。
-
+```
+          A1 -- A2   feature-a
+         /        \
+C0                 M3   main
+         \        /
+          M1 -- M2
+```
 ---
 
 ### `git restore`
