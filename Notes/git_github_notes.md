@@ -449,11 +449,7 @@ max_iter = 100
 冲突文件中可能显示：
 
 ```python
-<<<<<<< HEAD
 method = "algorithm_B"
-=======
-method = "algorithm_A"
->>>>>>> feature-a
 max_iter = 100
 ```
 
@@ -2053,7 +2049,7 @@ VS Code 会打开对比界面，让你看哪里变了。
 ![git status](https://raw.githubusercontent.com/Sean0330/CS_Fundamental/main/images/git_merge_vscode.png)
 
 ---
-## 5.3 
+## 5.2 Pull Request: GitHub 上的合并申请和审核流程
 ```
 你在 dev 分支改代码
         ↓
